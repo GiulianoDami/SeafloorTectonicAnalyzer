@@ -1,0 +1,61 @@
+{
+    "language": "Python",
+    "dependency_file": "requirements.txt",
+    "dependencies": ["numpy", "matplotlib", "pandas", "scipy", "plotly", "cartopy"],
+    "files": [
+        {
+            "path": "src/seafloor_analyzer.py",
+            "description": "Core module containing CanyonSimulator, SeismicAnalyzer, and ReportGenerator classes",
+            "exports": [
+                "class CanyonSimulator",
+                "class SeismicAnalyzer",
+                "class ReportGenerator",
+                "class TopographyVisualizer"
+            ]
+        },
+        {
+            "path": "src/models/tectonic_model.py",
+            "description": "Module for modeling tectonic stress distribution and canyon formation simulations",
+            "exports": [
+                "function calculate_stress_distribution",
+                "function simulate_canyon_formation"
+            ]
+        },
+        {
+            "path": "src/visualization/topography_visualizer.py",
+            "description": "Handles plotting and visualization of underwater topography and canyon profiles",
+            "exports": [
+                "class TopographyVisualizer",
+                "function plot_canyon_profile",
+                "function generate_formation_heatmap"
+            ]
+        },
+        {
+            "path": "src/data/seismic_processor.py",
+            "description": "Processes seismic data to assess canyon formation risk",
+            "exports": [
+                "class SeismicAnalyzer",
+                "function assess_canyon_risk"
+            ]
+        },
+        {
+            "path": "src/reports/report_generator.py",
+            "description": "Generates geological reports based on analysis results",
+            "exports": [
+                "class ReportGenerator",
+                "function generate_geological_report"
+            ]
+        },
+        {
+            "path": "src/cli/main.py",
+            "description": "Command-line interface for running analyses and generating outputs",
+            "imports_from_other_files": [
+                "seafloor_analyzer.py",
+                "models/tectonic_model.py",
+                "visualization/topography_visualizer.py",
+                "data/seismic_processor.py",
+                "reports/report_generator.py"
+            ]
+        }
+    ]
+}
